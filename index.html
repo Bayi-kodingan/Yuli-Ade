@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+  <title>Yuli & Ade</title>
+
+  <style>
+    .timeline {
+      list-style: none;
+      padding: 20px 0 20px;
+      position: relative;
+    }
+
+    .timeline:before {
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      content: " ";
+      width: 3px;
+      background-color: #eeeeee;
+      left: 50%;
+      margin-left: -1.5px;
+    }
+
+    .timeline>li {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .timeline>li:before,
+    .timeline>li:after {
+      content: " ";
+      display: table;
+    }
+
+    .timeline>li:after {
+      clear: both;
+    }
+
+    .timeline>li:before,
+    .timeline>li:after {
+      content: " ";
+      display: table;
+    }
+
+    .timeline>li:after {
+      clear: both;
+    }
+
+    .timeline>li>.timeline-panel {
+      width: 46%;
+      float: left;
+      border: 1px solid #d4d4d4;
+      border-radius: 2px;
+      padding: 20px;
+      position: relative;
+      -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    }
+
+    .timeline>li>.timeline-panel:before {
+      position: absolute;
+      top: 26px;
+      right: -15px;
+      display: inline-block;
+      border-top: 15px solid transparent;
+      border-left: 15px solid #ccc;
+      border-right: 0 solid #ccc;
+      border-bottom: 15px solid transparent;
+      content: " ";
+    }
+
+    .timeline>li>.timeline-panel:after {
+      position: absolute;
+      top: 27px;
+      right: -14px;
+      display: inline-block;
+      border-top: 14px solid transparent;
+      border-left: 14px solid #fff;
+      border-right: 0 solid #fff;
+      border-bottom: 14px solid transparent;
+      content: " ";
+    }
+
+    .timeline>li>.timeline-badge {
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 1.4em;
+      text-align: center;
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      margin-left: -25px;
+      /*background-color: #999999;*/
+      background-image: url('image/real_estate_100px.png');
+      background-size: 50px 50px;
+      z-index: 100;
+      border-top-right-radius: 50%;
+      border-top-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+      float: right;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel:before {
+      border-left-width: 0;
+      border-right-width: 15px;
+      left: -15px;
+      right: auto;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel:after {
+      border-left-width: 0;
+      border-right-width: 14px;
+      left: -14px;
+      right: auto;
+    }
+
+    .timeline-badge.primary {
+      /*background-color: #2e6da4 !important;*/
+      background-image: url('image/real_estate_100px.png');
+    }
+
+    .timeline-badge.success {
+      background-color: #3f903f !important;
+    }
+
+    .timeline-badge.warning {
+      background-image: url('image/paper_plane_100px.png') !important;
+      background-size: 50px 50px;
+    }
+
+    .timeline-badge.danger {
+      background-image: url('image/real_estate_100px.png') !important;
+      background-size: 50px 50px;
+    }
+
+    .timeline-badge.info {
+      background-color: #5bc0de !important;
+    }
+
+    .timeline-title {
+      margin-top: 0;
+      color: inherit;
+    }
+
+    .timeline-body>p,
+    .timeline-body>ul {
+      margin-bottom: 0;
+    }
+
+    .timeline-body>p+p {
+      margin-top: 5px;
+    }
+
+    .navbar-brand {
+      font-family: 'Rochester', cursive;
+    }
+
+    #nama img {
+      border: 5px solid #DC3545;
+    }
+
+
+    .responsive-container {
+      position: relative;
+      overflow: hidden;
+      padding-top: 56.25%;
+    }
+
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .row-table {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 100%;
+    }
+
+    .col-table {
+      display: table-cell;
+      float: none;
+      height: 100%;
+    }
+
+    .col-content {
+      height: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  </style>
+
+</head>
+
+<body class="bg-light">
+  <!--ini nav-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
+    <div class="container">
+      <a class="navbar-brand font-weight-bold" style="font-size: 28px; color: white;" href="#">Walimah</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="page-scroll nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="page-scroll nav-link" href="#couple">Couple</a>
+          </li>
+          <li class="nav-item">
+            <a class="page-scroll nav-link" href="#address">Address</a>
+          </li>
+          <li class="nav-item">
+            <a class="page-scroll nav-link" href="#story">Story</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--akhir nav-->
+
+  <!--ini jumbotron-->
+  <div id="home"
+    class="jumbotron jumbotron-fluid d-flex align-items-center justify-content-center font-weight-bold mt-5"
+    style="background:url('image/bg.jpg'); height: 100vh; background-size: cover; color: white;">
+    <div class="container ">
+      <h3 id="jumbotron-text" class=" text-center p-5" style="font-family: 'Laila', serif;"><b>Walimatul 'Ursy</b>
+        <br>
+        Cerita ini bukan akhir dari kisah, bukan juga awal dari cerita indah, tapi ini adalah sub judul dari buku yang
+        mulai kami rangkai saat pertama kali bertemu.<br>
+        Kami harap kalian menjadi saksi dalam ikrar janji kami.</h3>
+      <h4 id="demo" class="text-light text-center font-weight-bold"></h4>
+    </div>
+  </div>
+  <!--akhir jumbotron-->
+
+  <!--name-->
+  <div id="couple" class="container container-fluid bg-light pt-sm-3">
+    <h3 style="font-family: 'Rochester', cursive; color: #DC3545; text-align: center;"><b>Assalamu'alaikum!</b></h3>
+    <h4 class="text-center">Ahad, 02 Februari 2020, Kab. Sukabumi, Jawa Barat</h4>
+    <p class="text-center">We invited you to celebrate our walimah</p>
+    <div class="row mt-3 text-center align-items-center row-table">
+
+      <div class="col-sm-6 col-table">
+        <div class="col-content">
+          <img src="image/1.jpg" class="rounded-circle shadow-sm "
+            style="height: 150px; width: 150px; border: 5px solid #DC3545;" alt="">
+          <br>
+          <h3 style="font-family: 'Rochester', cursive; color: #DC3545;">Ade Herman</h3>
+          <p class="blockquote">“Pada mulanya Allah menciptakan satu jiwa, kemudian dia membelahnya menjadi dua.
+            Sehingga,
+            Allah yang maha pengasih lagi penyayang bisa menyatukannya lagi dalam pernikahan.”</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-table">
+        <div class="col-content">
+          <img src="image/2.jpeg" class="rounded-circle shadow-sm"
+            style="height: 150px; width: 150px; border: 5px solid #DC3545;" alt="">
+          <br>
+          <h3 style="font-family: 'Rochester', cursive; color: #DC3545;">Yuli Herawati</h3>
+          <p class="blockquote">"Kita tidak pernah tau jodoh kita dimana dan siapa, sejauh apapun akan didekatkan,
+            dan sedekat apapun akan dijauhkan, mutlak Allah yang menentukan.
+            Menjaga diri adalah sebuah perjuangan, berbahagialah untuk siapapun yang telah menjaga diri dan hatinya,
+            hingga Allah yang berhak mempersatukan dalam ikatan suci, kini Allah yang telah memilihkan jodoh untukku."
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- //name -->
+
+  <!-- peta -->
+  <!-- <div id="googleMap" style="width:100%;height:380px;"></div> -->
+  <div id="address" class="container-fluid bg-dark">
+    <div class="row mt-3 p-xl-5" style="color: white;">
+      <div class="col md-6 pt-3">
+        <h3>Akad Nikah <br> Kediaman mempelai wanita<br>Kp. Cijambe rt 01 rw 05 Ds / Kec. Cireunghas Kab. Sukabumi</h3>
+        <a class="btn btn-primary" href="https://maps.google.com/maps?q=-6.9449272%2C107.0227843&z=17&hl=en">Menuju
+          Lokasi</a>
+      </div>
+      <div class="col md-6 pt-3">
+        <div class="responsive-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5443615816503!2d107.02059561477303!3d-6.944927194982392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTYnNDEuNyJTIDEwN8KwMDEnMjIuMCJF!5e0!3m2!1sen!2sid!4v1580005335721!5m2!1sen!2sid"
+            width="400" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+            class="responsive-iframe"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //peta -->
+
+  <!-- timeline -->
+  <div id="story" class="container-fluid text-light align-items-center p-xl-5 bg-dark mb-0">
+    <div class="text p-xl-5" style="text-align: center;">
+      <h5 class="pt-3"><b>DIPERTEMUKAN DALAM DOA</b></h5>
+      <h3 style="font-family: 'Rochester', cursive; color: #DC3545;"><b>See Our Story</b></h3>
+      <P>Lihat bagaimana Allah mempertemukan kita.<br>
+        "Maha Suci (Allah) yang telah menciptakan semuanya berpasang-pasangan, baik dari apa yang ditumbuhkan oleh
+        bumi
+        dan dari mereka sendiri, maupun dari apa yang mereka tidak ketahui"<br><i>(QS Yassin : 36)</i>
+      </P>
+    </div>
+    <ul class="timeline p-xl-5 mb-0">
+      <li>
+        <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title"><b>30 Desember 2018</b></h4>
+          </div>
+          <div class="timeline-body">
+            <p>Melalui orang tua masing-masing, kami saling mengenal satu sama lain, saling berkenalan dan bertukar
+              kabar melalui WhatsUp.</p>
+          </div>
+        </div>
+      </li>
+      <li class="timeline-inverted">
+        <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h4 class="timeline-title"><b>16 November 2019</b></h4>
+          </div>
+          <div class="timeline-body">
+            <p>Setelah berjalan satu tahun kami memutuskan untuk melakukan calon suami saya Ade Herman memutuskan untuk
+              melamar saya dan kami memutuskan untuk melakukan pernikahan.</p>
+          </div>
+        </div>
+      </li>
+
+  </div>
+  <!--/ini timeline-->
+
+  <!--ini foother-->
+  <div id="foother" class="bg-dark text-white text-center p-5 mt-0">
+    <div class="container">
+      <div id="icon"></div>
+      <p>Copyright&copy; 2020 Salmonella</p>
+      <a href="https://www.instagram.com/mohamad_salman_farizi"><i class="fab fa-instagram"></i></a>
+      <i class="fab fa-facebook"></i>
+      <a href="https://github.com/Bayi-kodingan"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+  </div>
+  <!--/ini foother-->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="./js/script.js"></script>
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/bootstrap.js"></script>
+
+  <!-- Load the script on the page. -->
+  <script src=" ./js/typeit.min.js"></script>
+
+
+  <!-- countdownn -->
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Feb 02, 2020 00:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+      // Get todays date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      document.getElementById("demo", "text").innerHTML = "Road to Halal <br>" + days + "Hari " + hours + "Jam "
+        + minutes + "Menit " + seconds + "Detik ";
+
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "<p>Selamat Menempuh Hidup Baru</p>";
+      }
+    }, 1000);
+  </script>
+  <script>
+    $(document).ready(function () {
+
+      new TypeIt("#jumbotron-text", {
+        speed: 80,
+        waitUntilVisible: true,
+        loop: true,
+      })
+        //.type('Mohamad Salman Farizi')
+        .pause(500)
+        // .delete(2)
+        // .type('ell, ')
+        .pause(1000)
+        .go()
+
+
+    })
+  </script>
+
+
+</body>
+
+</html>
